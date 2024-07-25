@@ -75,15 +75,14 @@ namespace SeleniumWithCucumber.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Successful login with valid credentials")]
-        [NUnit.Framework.TestCaseAttribute("Admin", "admin123", "Chrome", null)]
-        [NUnit.Framework.TestCaseAttribute("Admin1", "121", "Firefox", null)]
-        public void SuccessfulLoginWithValidCredentials(string username, string password, string browser, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("Admin", "admin123", null)]
+        [NUnit.Framework.TestCaseAttribute("Admin1", "121", null)]
+        public void SuccessfulLoginWithValidCredentials(string username, string password, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("Username", username);
             argumentsOfScenario.Add("Password", password);
-            argumentsOfScenario.Add("Browser", browser);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Successful login with valid credentials", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 4
   this.ScenarioInitialize(scenarioInfo);
@@ -96,7 +95,7 @@ namespace SeleniumWithCucumber.Features
             {
                 this.ScenarioStart();
 #line 5
-    testRunner.Given(string.Format("user navigate to login page on Browser \"{0}\"", browser), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+    testRunner.Given("user navigate to login page on Browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 6
     testRunner.When(string.Format("user enter valid username \"{0}\" and password \"{1}\"", username, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

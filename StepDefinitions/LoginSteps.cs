@@ -13,8 +13,8 @@ namespace SeleniumWithCucumber
         private LoginPage loginPage;
         private static readonly ILog Log = LogManager.GetLogger(typeof(LoginSteps));
 
-        [Given(@"user navigate to login page on Browser ""(.*)""")]
-        public void GivenIAmOnTheLoginPage(string browser)
+        [Given(@"user navigate to login page on Browser")]
+        public void GivenIAmOnTheLoginPage()
         {
             IBrowserFactory factory = WebDriverFactoryProvider.GetWebDriverFactory();
             driver = factory.CreateDriver();
